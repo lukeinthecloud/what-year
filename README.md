@@ -1,2 +1,4 @@
-# what-year
-A game where we scrape the top 100 movies from IMDB and you guess the year! Try beat other players!
+# What Year
+
+- A game where you guess the year of movies pulled straight from IMDB
+- Create an account, login, play and get higher scores than the other players
