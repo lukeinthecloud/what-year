@@ -1,4 +1,5 @@
 import React from 'react';
+import LogoutButton from '../../Components/Logout';
 
 export default function Game() {
     return (
@@ -8,7 +9,7 @@ export default function Game() {
                     <div className="card card-signin my-5">
                         <div className="card-body">
                             <h5 className="card-title text-center">Game Home</h5>
-
+                            <LogoutButton/>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
-export default function Login() {
+import {setAuthenticated} from '../redux/actions/authenticated.action';
+
+function Login(props) {
+    function loginClickHandler() {
+        props.setAuthenticated(true);
+        props.history.push('/game/new');
+    }
+
     return (
         <div className="container">
             <div className="row">
@@ -26,8 +34,9 @@ export default function Login() {
                                     <label className="custom-control-label" htmlFor="customCheck1">Remember
                                         password</label>
                                 </div>
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign
-                                    in
+                                <button onClick={loginClickHandler}
+                                        className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+                                    Sign in
                                 </button>
                             </form>
                         </div>
@@ -38,3 +47,13 @@ export default function Login() {
     );
 }
 
+function mapStateToProps({authenticated}) {
+    return {authenticated}
+}
+
+export default connect(
+    mapStateToProps,
+    {
+        setAuthenticated
+    }
+)(Login);

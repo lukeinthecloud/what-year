@@ -8,7 +8,6 @@ export default function GameNew() {
                     <div className="card card-signin my-5">
                         <div className="card-body">
                             <h5 className="card-title text-center">New Game</h5>
-
                         </div>
                     </div>
                 </div>
