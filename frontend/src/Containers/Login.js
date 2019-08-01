@@ -6,7 +6,7 @@ import {setAuthenticated} from '../redux/actions/authenticated.action';
 function Login(props) {
     function loginClickHandler() {
         props.setAuthenticated(true);
-        props.history.push('/game/new');
+        props.history.push('/game');
     }
 
     return (
