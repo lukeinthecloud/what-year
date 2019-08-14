@@ -1,24 +1,34 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const expressDomain = require('express-domain-middleware');
 const logger = require('morgan');
+
+const dbConnectionService = require('./services/database/db-connection.service');
 
 require('dotenv-flow').config({
 	node_env: process.env.NODE_ENV.trim()
 });
 
+let app = express();
+
 const apiRouter = require('./routes/api/api.router');
 const heartBeatRouter = require('./routes/heartbeat');
 
-const app = express();
+dbConnectionService.connectDatabase((err) => {
+	if (err) {
+		// TODO: handle error
+	}
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+	app.use(logger('dev'));
+	app.use(express.json());
+	app.use(express.urlencoded({extended: false}));
+	app.use(cookieParser());
+	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(expressDomain);
 
-app.use('/', heartBeatRouter);
-app.use('/api', apiRouter);
+	app.use('/', heartBeatRouter);
+	app.use('/api', apiRouter);
+});
 
 module.exports = app;

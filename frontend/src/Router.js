@@ -1,10 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
-import Login from './Containers/Login';
-import Home from './Containers/Home';
-import GameRouter from './Containers/Game/GameRouter';
-import AuthenticatedRoute from './Components/AuthenticatedRoute';
+import RouteWithSubRoutes from './Components/RouteWithSubRouter';
+import {routes} from './routers.config';
 
 export default function AppRouter() {
     return (
@@ -22,9 +20,12 @@ export default function AppRouter() {
                     </div>
                 </nav>
 
-                <Route path="/" exact component={Home}/>
-                <Route path="/login" component={Login}/>
-                <AuthenticatedRoute path="/game" component={GameRouter}/>
+                {
+                    routes.map((route, index) => (
+                            <RouteWithSubRoutes key={index} {...route} />
+                        )
+                    )
+                }
             </div>
         </Router>
     );

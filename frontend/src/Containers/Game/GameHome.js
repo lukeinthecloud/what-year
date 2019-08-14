@@ -1,7 +1,10 @@
 import React from 'react';
-import LogoutButton from '../../Components/Logout';
+import {Link} from 'react-router-dom';
 
-export default function Game() {
+import LogoutButton from '../../Components/Logout';
+import RouteWithSubRoutes from '../../Components/RouteWithSubRouter';
+
+export default function Game({routes}) {
     return (
         <div className="container">
             <div className="row">
@@ -9,11 +12,20 @@ export default function Game() {
                     <div className="card card-signin my-5">
                         <div className="card-body">
                             <h5 className="card-title text-center">Game Home</h5>
+                            <Link to="/game/new">Game New</Link>
                             <LogoutButton/>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            {
+                routes.map((route, index) => (
+                        <RouteWithSubRoutes key={index} {...route} />
+                    )
+                )
+            }
         </div>
     );
 }

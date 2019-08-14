@@ -1,21 +1,37 @@
 import React from 'react';
 
-import {Redirect, Route} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 
 import {getAuthenticatedState} from '../redux/selectors/authenticated.selectors';
 import {connect} from 'react-redux';
+import RouteWithSubRoutes from './RouteWithSubRouter';
 
-function AuthenticatedRoute({component: Component, ...rest}) {
+function AuthenticatedRoute({routes, ...rest}) {
     const isAuthenticated = rest.authenticated;
 
     function _canProceed(props) {
-        return isAuthenticated ? (
-            <Component {...props} />
-        ) : (
+        return isAuthenticated ? (_renderMainRouteAndSubRoutes()) : (_redirectToLogin(props))
+    }
+
+    function _renderMainRouteAndSubRoutes() {
+        return (
+            <Switch>
+                <Route exact path={`${rest.path}`} component={rest.routeComponent}/>
+                {
+                    routes.map((route, index) => (
+                        <RouteWithSubRoutes key={index} {...route} />
+                    ))
+                }
+            </Switch>
+        )
+    }
+
+    function _redirectToLogin(props) {
+        return (
             <Redirect
                 to={{
                     pathname: '/login',
-                    state: { from: props.location }
+                    state: {from: props.location}
                 }}
             />
         )

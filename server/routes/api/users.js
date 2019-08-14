@@ -2,23 +2,48 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
 
-router.get('/', function(req, res, next) {
-	res.json({
-		login: '/login (username, password) => JWT Session',
-		register: '/register (username, password) => JWT Session',
-		logout: '/logout (username) => Success Status',
-	});
+const userSchema = new mongoose.Schema({
+	username: 'string',
+	password: 'string'
 });
 
-router.get('/login', function(req, res, next) {
+const User = mongoose.model('User', userSchema, 'localUsers');
+
+router.get('/', async (req, res) => {
+	const response = await User.find({})
+		.catch((err) => {
+			// TODO: Handle error
+		});
+
+	await res.json(response);
 });
 
-router.get('/register', function(req, res, next) {
-
-});
-
-router.get('/logout', function(req, res, next) {
+router.post('/register', function(req, res, next) {
+	passport.use(new LocalStrategy((username, password, done) => {
+			console.log(username)
+			// User.findOne({username: username}, (err, user) => {
+			// 	if (err) {
+			// 		return done(err);
+			// 	}
+			//
+			// 	if (!user) {
+			// 		return done(null, false, {
+			// 			message: 'Incorrect username.'
+			// 		});
+			// 	}
+			//
+			// 	if (!user.validPassword(password)) {
+			// 		return done(null, false, {
+			// 			message: 'Incorrect password.'
+			// 		});
+			// 	}
+			//
+			// 	return done(null, user);
+			// });
+		}
+	));
 });
 
 module.exports = router;
