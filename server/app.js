@@ -4,7 +4,9 @@ const cookieParser = require('cookie-parser');
 const expressDomain = require('express-domain-middleware');
 const logger = require('morgan');
 
-const dbConnectionService = require('./services/database/db-connection.service');
+const errorMiddleware = require('./logic/middleware/errors/error.middleware');
+const errorLoggerMiddleware = require('./logic/middleware/errors/error-logger.middleware');
+const dbConnectionService = require('./logic/services/database/db-connection.service');
 
 require('dotenv-flow').config({
 	node_env: process.env.NODE_ENV.trim()
@@ -29,6 +31,9 @@ dbConnectionService.connectDatabase((err) => {
 
 	app.use('/', heartBeatRouter);
 	app.use('/api', apiRouter);
+
+	app.use(errorLoggerMiddleware);
+	app.use(errorMiddleware);
 });
 
 module.exports = app;

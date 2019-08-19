@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd29171-556c-4305-b46f-f01723a4f0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/env.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/user.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/database/db-connection.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error-logger.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Components/AuthenticatedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/AuthenticatedRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Containers/Game/GameHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Containers/Game/GameHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Containers/Game/GameNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Containers/Game/GameNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Containers/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/api/api.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/api.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/heartbeat.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/heartbeat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/database/db-connection.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/services/database/db-connection.service.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +41,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/node_modules/nodemon/lib/nodemon.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/logic/middleware/errors" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -56,14 +49,15 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\luker\Workspace\what-year\src\Containers\Game" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\luker\Workspace\what-year\server\logic\middleware" />
+      <recent name="D:\Users\luker\Workspace\what-year\server\logic" />
       <recent name="D:\Users\luker\Workspace\what-year\server\routes\api" />
       <recent name="D:\Users\luker\Workspace\what-year" />
       <recent name="D:\Users\luker\Workspace\what-year\src\redux" />
-      <recent name="D:\Users\luker\Workspace\what-year\src\store" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\luker\Workspace\what-year\server\logic\middleware\errors" />
       <recent name="D:\Users\luker\Workspace\what-year\src\Containers\Game" />
     </key>
   </component>
@@ -171,7 +165,8 @@
       <workItem from="1564683697358" duration="9417000" />
       <workItem from="1564693363444" duration="121000" />
       <workItem from="1565032810683" duration="7080000" />
-      <workItem from="1565813406190" duration="4248000" />
+      <workItem from="1565813406190" duration="4982000" />
+      <workItem from="1566236036011" duration="3296000" />
     </task>
     <servers />
   </component>

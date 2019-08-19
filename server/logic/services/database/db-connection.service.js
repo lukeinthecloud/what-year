@@ -1,4 +1,4 @@
-const envConfig = require('../../env.config');
+const envConfig = require('../../../env.config');
 const mongoose = require('mongoose');
 
 const uri = `mongodb+srv://${envConfig.MONGODB_USER}:${envConfig.MONGODB_PASSWORD}@cluster0-f23vc.mongodb.net/users?retryWrites=true&w=majority`;
