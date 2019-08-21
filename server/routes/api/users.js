@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
-const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../../models/user.model');
 
@@ -17,14 +16,14 @@ router.get('/', async (req, res) => {
 
 router.post('/register', async (req, res) => {
 	try {
-			const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+		const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
-			const newUser = new User({
-				username: req.body.username,
-				password: hashedPassword
-			});
+		const newUser = new User({
+			username: req.body.username,
+			password: hashedPassword
+		});
 
-			const saveResult = await newUser.save();
+		const saveResult = await newUser.save();
 
 		await res.json({
 			message: `Successfully registered ${req.body.username}`,
@@ -38,6 +37,10 @@ router.post('/register', async (req, res) => {
 			.status(500)
 			.send(err);
 	}
+});
+
+router.post('/login', passport.authenticate('local'), (req, res, next) => {
+
 });
 
 module.exports = router;

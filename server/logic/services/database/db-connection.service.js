@@ -1,9 +1,8 @@
-const envConfig = require('../../../env.config');
 const mongoose = require('mongoose');
 
-const uri = `mongodb+srv://${envConfig.MONGODB_USER}:${envConfig.MONGODB_PASSWORD}@cluster0-f23vc.mongodb.net/users?retryWrites=true&w=majority`;
-
 function connectDatabase(callback) {
+	const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0-f23vc.mongodb.net/users?retryWrites=true&w=majority`;
+
 	mongoose.connect(uri, {useNewUrlParser: true});
 
 	mongoose.connection.on('connected', () => {

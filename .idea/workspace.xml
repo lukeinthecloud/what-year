@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd29171-556c-4305-b46f-f01723a4f0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error-logger.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/config/enviroment-setup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/config/passport-setup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/env.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logic/services/database/db-connection.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/services/database/db-connection.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api/api.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/api.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/database/db-connection.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/services/database/db-connection.service.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,24 +45,25 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/logic/middleware/errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\luker\Workspace\what-year\server" />
+      <recent name="D:\Users\luker\Workspace\what-year\server\logic\middleware\errors" />
+      <recent name="D:\Users\luker\Workspace\what-year\src\Containers\Game" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\luker\Workspace\what-year\server\logic\middleware" />
       <recent name="D:\Users\luker\Workspace\what-year\server\logic" />
       <recent name="D:\Users\luker\Workspace\what-year\server\routes\api" />
       <recent name="D:\Users\luker\Workspace\what-year" />
       <recent name="D:\Users\luker\Workspace\what-year\src\redux" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\luker\Workspace\what-year\server\logic\middleware\errors" />
-      <recent name="D:\Users\luker\Workspace\what-year\src\Containers\Game" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -79,16 +84,18 @@
       <toRun name="app.js" type="NodeJSConfigurationType" />
       <method v="2" />
     </configuration>
-    <configuration name="Dev" type="NodeJSConfigurationType" path-to-node="node" path-to-js-file="server/bin/www" working-dir="$PROJECT_DIR$">
+    <configuration name="Dev" type="NodeJSConfigurationType" path-to-node="node" node-parameters="C:\Users\luker\AppData\Roaming\npm\node_modules\nodemon\bin\nodemon.js" path-to-js-file="server/bin/www" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="NODE_ENV" value="development" />
+        <env name="MONGODB_USER" value="admin" />
+        <env name="MONGODB_password" value="BdzRC2L956OTJ2If" />
       </envs>
       <method v="2" />
     </configuration>
     <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/server">
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
       <scripts>
@@ -138,7 +145,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start (2)" />
         <item itemvalue="npm.start" />
@@ -166,7 +172,10 @@
       <workItem from="1564693363444" duration="121000" />
       <workItem from="1565032810683" duration="7080000" />
       <workItem from="1565813406190" duration="4982000" />
-      <workItem from="1566236036011" duration="3296000" />
+      <workItem from="1566236036011" duration="9331000" />
+      <workItem from="1566327594692" duration="143000" />
+      <workItem from="1566327756602" duration="1840000" />
+      <workItem from="1566413624691" duration="2342000" />
     </task>
     <servers />
   </component>
