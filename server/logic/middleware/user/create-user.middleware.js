@@ -1,4 +1,5 @@
 const registrationService = require('../../services/user/registration.service');
+const errorCodes = require('../../../error-codes.constant');
 
 async function createNewUser(req, res, next) {
 	const {doesUserExist} = res.locals;
@@ -40,7 +41,7 @@ function _handleUserRegistrationError(err, req, res, next) {
 	console.error('Error registering user: ', err);
 
 	next({
-		statusCode: 500,
+		errorCode: errorCodes.registration,
 		path: 'users/register',
 		message: 'There was a problem registering this user, please try again'
 	});

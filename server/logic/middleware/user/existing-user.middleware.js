@@ -1,4 +1,5 @@
 const registrationService = require('../../services/user/registration.service');
+const errorCodes = require('../../../error-codes.constant');
 
 async function existingUser(req, res, next) {
 	let error = null;
@@ -13,7 +14,7 @@ async function existingUser(req, res, next) {
 		next();
 	} else {
 		next({
-			statusCode: 500,
+			errorCode: errorCodes.registration,
 			path: 'users/register',
 			message: `Error in request: ${error}`
 		});

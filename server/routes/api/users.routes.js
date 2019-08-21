@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 	await res.json(response);
 });
 
-router.post('/register', [existingUser, createNewUser], async (req, res, next) => {
+router.post('/register', [existingUser, createNewUser], async (req, res) => {
 	res
 		.status(200)
 		.json({
@@ -30,7 +30,7 @@ router.post('/register', [existingUser, createNewUser], async (req, res, next) =
 		})
 });
 
-router.post('/login', passport.authenticate('local'), (req, res, next) => {
+router.post('/login', passport.authenticate('local'), (req, res) => {
 });
 
 module.exports = router;

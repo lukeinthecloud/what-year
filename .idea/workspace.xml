@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fd29171-556c-4305-b46f-f01723a4f0c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/logic/middleware/user/create-user.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/logic/middleware/user/existing-user.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/logic/services/database/database.helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/logic/services/user/registration.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/api/users.routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/error-codes.constant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/middleware/errors/error.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/api/api.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/api.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/api/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logic/middleware/user/create-user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/middleware/user/create-user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logic/middleware/user/existing-user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/logic/middleware/user/existing-user.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api/users.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/users.routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.Dev">
+  <component name="RunManager" selected="npm.start (2)">
     <configuration default="true" type="CompoundRunConfigurationType">
       <toRun name="Debug" type="ChromiumRemoteDebugType" />
       <toRun name="app.js" type="NodeJSConfigurationType" />
@@ -141,8 +137,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start (2)" />
+        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -171,7 +167,7 @@
       <workItem from="1566236036011" duration="9331000" />
       <workItem from="1566327594692" duration="143000" />
       <workItem from="1566327756602" duration="1840000" />
-      <workItem from="1566413624691" duration="8058000" />
+      <workItem from="1566413624691" duration="8696000" />
     </task>
     <servers />
   </component>
