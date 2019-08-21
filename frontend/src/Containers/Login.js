@@ -2,7 +2,6 @@ import React       from 'react';
 import { connect } from 'react-redux'
 
 import { setAuthenticated } from '../redux/actions/authenticated.action';
-import RouteWithSubRoutes   from '../Components/RouteWithSubRouter';
 
 function Login(props) {
 	function loginClickHandler() {

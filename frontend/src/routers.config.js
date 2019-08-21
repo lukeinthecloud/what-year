@@ -8,8 +8,8 @@ export const routes = [
 	{
 		path: '/',
 		isExact: true,
+		requiresAuthentication: true,
 		component: Home,
-
 	},
 	{
 		path: '/login',
@@ -19,7 +19,7 @@ export const routes = [
 		path: '/game',
 		component: GameHome,
 		isExact: true,
-		requiresAuthentication: false,
+		requiresAuthentication: true,
 		routes: [
 			{
 				path: '/game/new',

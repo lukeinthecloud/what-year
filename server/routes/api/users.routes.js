@@ -31,6 +31,7 @@ router.post('/register', [existingUser, createNewUser], async (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local'), (req, res) => {
+	console.log(req, res)
 });
 
 module.exports = router;

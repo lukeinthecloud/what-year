@@ -4,6 +4,10 @@ import { Route }          from 'react-router-dom';
 import AuthenticatedRoute from './AuthenticatedRoute';
 
 export default function RouteWithSubRoutes(route) {
+	function _generateRouteType() {
+		return route.requiresAuthentication ? _renderAuthenticatedRoute() : _renderRoute()
+	}
+
 	function _renderAuthenticatedRoute() {
 		return (
 			<AuthenticatedRoute path={route.path} routeComponent={route.component} routes={route.routes}/>
@@ -20,10 +24,6 @@ export default function RouteWithSubRoutes(route) {
 				)}
 			/>
 		)
-	}
-
-	function _generateRouteType() {
-		return route.requiresAuthentication ? _renderAuthenticatedRoute() : _renderRoute()
 	}
 
 	return (

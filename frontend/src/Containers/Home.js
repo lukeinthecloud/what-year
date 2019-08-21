@@ -8,7 +8,6 @@ export default function Home() {
 					<div className="card card-signin my-5">
 						<div className="card-body">
 							<h5 className="card-title text-center">Home</h5>
-
 						</div>
 					</div>
 				</div>
