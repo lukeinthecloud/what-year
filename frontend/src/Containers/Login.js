@@ -1,12 +1,21 @@
-import React       from 'react';
-import { connect } from 'react-redux'
+import React, { useState } from 'react';
+import { connect }         from 'react-redux'
 
-import { setAuthenticated } from '../redux/actions/authenticated.action';
+import { setAuthenticated }       from '../redux/actions/authenticated.action';
+import * as authenticationService from '../services/authentication/authentication.service';
 
 function Login(props) {
-	function loginClickHandler() {
-		props.setAuthenticated(true);
-		props.history.push('/game');
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
+	async function loginClickHandler(e) {
+		e.preventDefault();
+		const response = await authenticationService.registerUser({
+			username,
+			password
+		});
+
+		console.log(response);
 	}
 
 	return (
@@ -18,14 +27,25 @@ function Login(props) {
 							<h5 className="card-title text-center">Sign In</h5>
 							<form className="form-signin">
 								<div className="form-label-group">
-									<input type="email" id="inputEmail" className="form-control"
-									       placeholder="Email address" required autoFocus/>
+									<input type="email"
+									       id="inputEmail"
+									       className="form-control"
+									       placeholder="Email address"
+									       value={username}
+									       onChange={e => setUsername(e.target.value)}
+									       required
+									       autoFocus/>
 									<label htmlFor="inputEmail">Email address</label>
 								</div>
 
 								<div className="form-label-group">
-									<input type="password" id="inputPassword" className="form-control"
-									       placeholder="Password" required/>
+									<input type="password"
+									       id="inputPassword"
+									       className="form-control"
+									       placeholder="Password"
+									       value={password}
+									       onChange={e => setPassword(e.target.value)}
+									       required/>
 									<label htmlFor="inputPassword">Password</label>
 								</div>
 

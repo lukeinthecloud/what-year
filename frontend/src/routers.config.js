@@ -8,7 +8,6 @@ export const routes = [
 	{
 		path: '/',
 		isExact: true,
-		requiresAuthentication: true,
 		component: Home,
 	},
 	{
